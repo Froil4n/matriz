@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+int tmatriz=0;
+void llenadomatriz(int matriz[][3],int tmatriz=0){
+	for(int i=0;i<tmatriz;i++){
+		for(int a=0;a<3;a++){
+		cin>>matriz[i][a];
+	}
+	}
+}
+void imprimirmatriz(int matriz[][3],int tmatriz=0){
+	for(int i=0;i<tmatriz;i++){
+		for(int a=0;a<3;a++){
+		cout<<matriz[i][a]<<",";
+	}
+	cout<<endl;
+	}
+}
+void calcularpromedio(int matriz[][3],int tmatriz=0){
+	float resultado=0;
+	int ayuda=0;
+	float promedio=0;
+	int cantidad=0;
+		for(int i=0;i<tmatriz;i++){
+		for(int a=0;a<3;a++){
+			cantidad++;
+		resultado=matriz[i][a]+ayuda;
+		ayuda=resultado;
+	}
+	}
+	promedio=resultado/cantidad;
+	cout<<endl;
+	cout<<"El promedio de todo seria: "<<promedio;
+}
+
+int main(){
+	cout<<"El numero de filas es de 3"<<endl;
+	cout<<"ingrese el numero de columnas: ";
+	cin>>tmatriz;
+	int matriz[tmatriz][3];
+	cout<<"Ingrese los valores: "<<endl;
+	llenadomatriz(matriz,tmatriz);
+	imprimirmatriz(matriz,tmatriz);
+	calcularpromedio(matriz,tmatriz);
+	return 0;
+}
